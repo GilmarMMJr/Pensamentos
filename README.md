@@ -16,11 +16,7 @@ Assuntos abordados:
 * Settings Bundle
 * NotificationCenter 
 
-<h2>APP</h2>
 
-
-
-<h2>Auto Layout</h2> 
   
 
 
