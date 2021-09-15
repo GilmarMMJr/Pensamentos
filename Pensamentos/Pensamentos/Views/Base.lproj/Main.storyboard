@@ -11,12 +11,12 @@
         <!--Pensamentos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pensamentos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuotesViewController" customModule="Pensamentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vfl-BQ-G4r">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vfl-BQ-G4r">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mq-8i-aRk">
@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="width" secondItem="GAN-iw-zxW" secondAttribute="height" multiplier="750:666" id="Vnp-jq-uQ7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pensamento" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-EO-Doo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="Pensamento" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-EO-Doo">
                                 <rect key="frame" x="30" y="294" width="260" height="48"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -69,6 +69,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pensamentos" image="quotes" id="v9E-r5-TVI"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="kJG-H4-mpD" id="FpL-TZ-pFF"/>
+                        <outlet property="photoBgImageView" destination="Vfl-BQ-G4r" id="m96-vR-nin"/>
+                        <outlet property="photoImageView" destination="GAN-iw-zxW" id="wBG-n3-YQs"/>
+                        <outlet property="quoteLabel" destination="ZdV-EO-Doo" id="n6n-iN-tLf"/>
+                        <outlet property="topConstraint" destination="dAd-Qe-OuV" id="oDh-3l-bSd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,7 +84,7 @@
         <!--Configurações-->
         <scene sceneID="k9G-ew-O33">
             <objects>
-                <viewController id="IJY-vA-gRh" sceneMemberID="viewController">
+                <viewController id="IJY-vA-gRh" customClass="SettingsViewController" customModule="Pensamentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5C9-7n-lly">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +122,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eo3-b6-xcT">
                                 <rect key="frame" x="135.5" y="38" width="51" height="31"/>
                                 <color key="onTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeAutoRefresh:" destination="IJY-vA-gRh" eventType="valueChanged" id="PfE-cN-rcI"/>
+                                </connections>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvg-mW-HgH">
                                 <rect key="frame" x="0.0" y="85" width="320" height="1"/>
@@ -134,6 +144,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="8Fw-QL-KVj">
                                 <rect key="frame" x="42" y="126" width="228" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeTimeInterval:" destination="IJY-vA-gRh" eventType="valueChanged" id="PrA-YB-scf"/>
+                                </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MW2-DK-Z1T">
                                 <rect key="frame" x="24" y="219" width="272" height="32"/>
@@ -142,6 +155,9 @@
                                     <segment title="Escuro"/>
                                 </segments>
                                 <color key="tintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeColorScheme:" destination="IJY-vA-gRh" eventType="valueChanged" id="tNn-e2-PON"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obs.: Para mudar de pensamento basta tocar em qualquer lugar na tela &quot;Pensamentos&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-0b-XN7">
                                 <rect key="frame" x="24" y="433" width="272" height="54"/>
@@ -183,6 +199,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Configurações" image="settings" id="gPP-L5-YGg"/>
+                    <connections>
+                        <outlet property="autoRefreshSwitch" destination="Eo3-b6-xcT" id="mSt-Mw-sky"/>
+                        <outlet property="colorSchemeSC" destination="MW2-DK-Z1T" id="6hn-0V-LcJ"/>
+                        <outlet property="timeIntervalLabel" destination="e6J-H3-kwd" id="7sR-3o-3co"/>
+                        <outlet property="timeIntervalSlider" destination="8Fw-QL-KVj" id="oY0-Ww-3Fy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmw-KQ-7vs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
