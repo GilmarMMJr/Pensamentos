@@ -15,9 +15,11 @@ Assuntos abordados:
 * Persistencia de dados UserDefaults
 * Settings Bundle
 * NotificationCenter 
+* MVC
 
+<h2> App </h2> 
 
-  
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/88335633/133518121-771eeb13-f5af-4a99-9b45-2b0615e7cf9e.gif)
 
 
 
